@@ -11,7 +11,7 @@ spring:
   datasource:
     url: "jdbc:mysql://localhost/authorization_db?useSSL=false"
     username: "root"
-    password: "{cipher}de8a2140acf533afcd9e1ee6f9156226581120ed6b49187e376694db634b7bad"
+    password: "password"
       
 
     testWhileIdle: "true"
