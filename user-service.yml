@@ -3,7 +3,7 @@ server:
   port: 8085
 spring:
   application:
-    name: userservice
+    name: user-service
   profiles:
     active:
       - default
