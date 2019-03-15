@@ -1,0 +1,36 @@
+zuul:
+  routes:
+    user:
+      path: /user/**
+      service-id: user-service
+    mail:
+      path: /mail/**
+      service-id: mail-service
+    auth:
+      path: /auth/**
+      service-id: authenticationservice
+      strip-prefix: false
+      sensitive-headers:
+      - Cookie
+      - Set-Cookie
+server:
+  port: 8080
+spring:
+  application:
+    name: zuul-api-gateway
+  profiles:
+    active:
+    - default
+  security:
+    user:
+      name: gateNoGit
+  cloud:
+    config:
+      uri:
+      - http://localhost:8888/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
